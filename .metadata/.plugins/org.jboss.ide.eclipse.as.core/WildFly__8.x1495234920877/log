@@ -1,0 +1,31 @@
+!SESSION 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2017-05-19 20:02:29.545
+!MESSAGE The server "WildFly  8.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_131 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2017-05-19 20:03:05.816
+!MESSAGE The server "WildFly  8.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_131 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-05-19 20:03:07.189
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2017-05-19 20:03:13.619
+!MESSAGE Module Project1FrontEnd on WildFly  8.x not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-05-19 20:03:13.844
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.wtp.core 1 16973825 2017-05-19 20:56:13.128
+!MESSAGE Server processes have terminated prematurely. Please check your server logs for more details. 
+
+!ENTRY org.jboss.ide.eclipse.as.core 4 0 2017-05-19 20:56:58.869
+!MESSAGE The server "WildFly  8.x" requires a JDK to run properly. The VM used to launch this server is not recognized as a valid JDK. C:\Program Files\Java\jre1.8.0_131 
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2017-05-19 20:56:59.983
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2017-05-19 20:57:09.222
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2017-05-19 20:57:09.424
+!MESSAGE Module Project2httpJaxRS on WildFly  8.x not yet fully deployed. Waiting...
