@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contatosModulo">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../favicon.ico"> -->
+
+    <title>Contatos</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar-static-top.css" rel="stylesheet">
+      
+    <!-- DATATABLE PLUG_IN -->
+    <link th:href="css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link th:href="css/dataTables.bootstrap.min.css" rel="stylesheet" />
+      
+    <!-- FONT AWESOME PLUG IN -->
+    <link th:href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="js/ie-emulation-modes-warning.js"></script>
+      
+      
+    <script src="js/angular.min.js"></script>
+
+  </head>
+
+  <body ng-controller="contatosController">
+
+    <!-- Static navbar -->
+    <div ng-include src="'header.html'"></div>
+
+
+    <div class="container">
+        
+        <h3>Lista de Contatos</h3>
+        <hr />
+        
+        <!-- TAble -->
+        <div class="table-responsive">
+			<table id="contatosListTable" class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>Fone</th>
+						<th>Email</th>
+						<th>Endereço</th>
+                        <th>Bairro</th>
+						<th>Ultima Data</th>
+						<th>Operation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="contatosListTable in contatos">
+					
+						<!-- <td><input hidden="hidden" name="id" th:value="${book.id}" /></td> -->
+						<td>{{contatosListTable.id}}</td>
+						<td>{{contatosListTable.nome}}</td>
+						<td>{{contatosListTable.fone}}</td>
+						<td>{{contatosListTable.email}}</td>
+						<td>{{contatosListTable.endereco}}</td>
+                        <td>{{contatosListTable.bairro}}</td>
+						<td>{{contatosListTable.lastData}}</td>
+						<td>delete</td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div><!--/ TAble -->
+        
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2018 Saulo Pereira Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+      <!-- /.FOOTER -->
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="controller/contatos.js"></script>
+      
+    <!-- DATA TABLES PLUG_IN -->
+	<script th:src="js/jquery.dataTables.min.js"></script>
+	<script th:src="js/dataTables.bootstrap.min.js"></script>
+      
+    <!-- DATA TABLES PLUG_IN -->
+    <script>
+       /* $(document).ready(function() {
+           $('#contatosListTable').DataTable({
+              "lengthMenu": [[5,10,15,20,-1],[5,10,15,20,"All"]],
+				"ordering": false,
+				stateSave: true 
+           });
+        });*/
+    </script>
+    
+  </body>
+</html>

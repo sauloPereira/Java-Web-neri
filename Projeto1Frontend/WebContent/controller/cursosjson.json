@@ -1,0 +1,10 @@
+{
+	"cursos": [
+		{"codigo":"1","descricao":"Java Web","diashorarios":"Seg e Quar / 19hs","professor":"Morgana Pereira Rodrigues"},
+		{"codigo":"2","descricao":"C#","diashorarios":"Ter e Qui / 20hs","professor":"Saulo Pereira da Silva"},
+		{"codigo":"3","descricao":"Unity","diashorarios":"Sex / 19hs","professor":"Francisca Joelma Sousa Rodrigues"},
+		{"codigo":"4","descricao":"HTML / CSS","diashorarios":"Sab / 09hs","professor":"Morgana Khalisee Pereira Rodrigues"}
+
+	]
+
+}

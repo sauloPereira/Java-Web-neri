@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cursoModulo">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="imagen/TiredOfWar.png">
+	
+    <title>Cursos</title>
+
+    <!-- Bootstrap core CSS -->
+	<script src="js/angular.min.js"></script>
+
+	<link href="css/estilos.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/carousel.css" rel="stylesheet">
+
+    
+
+
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body ng-controller="cursoController">
+    <div ng-include src="'header.html'"></div>
+
+
+    <div class="container">
+
+    	<h1>Lista e Cadastro de Cursos</h1>
+    	<br>
+
+	  <!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+	    <li role="presentation" class="active"><a href="#lista" aria-controls="lista" role="tab" data-toggle="tab">Lista</a></li>
+	    <li role="presentation"><a href="#cadastro" aria-controls="cadastro" role="tab" data-toggle="tab">Cadastro</a></li>
+	  </ul>
+
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	    <div role="tabpanel" class="tab-pane active" id="lista">
+
+	    	<br>
+
+	    	<!--Busca-->
+				<form align="right" class="form-inline">
+					<div class="form-group">
+				    	<input type="pesquisa" ng-model="pesquisaCurso" class="form-control" id="pesquisa" placeholder="Busca">
+				  	</div>
+				</form>
+			<br>
+			<!--/.Busca-->
+
+	    	<!--Tabelas-->
+		    <div class="container">
+			    <table class="table table-condensed table-hover">
+			 		<th>Código</th>
+			 		<th>Descrição</th>
+			 		<th>Dias / Hórarios</th>
+			 		<th>Professor</th>
+			 		<tr ng-repeat="cursosTabela in cursos | filter:pesquisaCurso" ng-click="selecionaCurso(cursosTabela)">
+			 			<td>{{cursosTabela.codigo}}</td>
+			 			<td>{{cursosTabela.nome}}</td>
+			 			<td>{{cursosTabela.diashorarios}}</td>
+			 			<td>{{cursosTabela.professorModel.nome}}</td>
+			 		</tr>
+				</table>
+			</div>
+    	<!--End Tabelas-->
+	    	
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="cadastro">
+
+	    	<!--Form-->
+
+			<div class="container">
+			   
+			   <br>
+				<form class="form-horizontal">
+				 <div class="form-group">
+				  <label for="codigo" class="col-sm-2 control-label">Código</label>
+				  <div class="col-sm-2">
+				    <input type="text" required ng-model="curso.codigo" class="form-control" id="codigo" placeholder="Código">
+				  </div>
+
+				  <div align="center" class="col-sm-2">
+					<button type="submit" ng-click="limparCampos()" class="btn btn-default">Limpar</button>
+				  </div>
+				 </div>
+
+				  <div class="form-group">
+				  	<label for="nome" class="col-sm-2 control-label">Nome</label>
+				  	  <div class="col-sm-4">		    
+				    	<input type="text" ng-model="curso.nome" class="form-control" id="nome" placeholder="Nome">
+				      </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="diashorarios" class="col-sm-2 control-label">Dias / Hórarios</label>
+				      <div class="col-sm-4">
+				    	<input type="text" ng-model="curso.diashorarios" class="form-control" id="diashorarios" placeholder="Dias / Hórarios">
+				      </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label for="professor" class="col-sm-2 control-label">Professor</label>
+				      <div class="col-sm-4">
+				    	
+				      	<select class="form-control" ng-model="curso.professorModel"
+				      		ng-options="professorModel.nome for professorModel in professores track by professorModel.codigo">
+				      		
+				      	</select>
+
+				      </div>
+				  </div>
+				  
+				  <div align="center">
+				    <button type="submit" ng-click="limparCampos()" class="btn btn-primary">Novo</button>
+				    <button ng-disabled="!curso.nome" type="submit" ng-click="salvar()" class="btn btn-success">Gravar</button>
+				    <button type="submit" ng-click="excluir()" class="btn btn-danger">Excluir</button>
+				  </div>
+
+				</form>
+				<br>
+				
+
+			</div>
+		    <!--End Form-->
+	    	
+	    </div>
+	  </div>
+
+	  <br>
+
+	</div>
+
+
+    <!-- FOOTER -->
+    <div class="container">
+	    <footer>
+	      <p class="pull-right"><a href="#">Back to top</a></p>
+	      <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	    </footer>
+	</div>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="controller/cursos.js"></script>
+    <script src="js/angular.min.js"></script>
+
+  </body>
+</html>

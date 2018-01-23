@@ -1,0 +1,5 @@
+package com.ND.dao;
+
+public interface ContatosDao {
+
+}

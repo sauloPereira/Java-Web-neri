@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contatosModulo">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content=""/>
+<meta name="author" content=""/>
+<!-- <link rel="icon" href="../../favicon.ico"> -->
+
+<title>Add Contatos</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+<!-- Custom styles for this template -->
+<link href="css/navbar-static-top.css" rel="stylesheet"/>
+
+<!-- FONT AWESOME PLUG IN -->
+<link th:href="css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="js/ie-emulation-modes-warning.js"></script>
+
+
+<script src="js/angular.min.js"></script>
+    
+<!-- Plug-in TineMCE para formatação na "descrição"
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script> -->
+
+</head>
+
+<body ng-controller="contatosController">
+
+<!-- Static navbar -->
+<div ng-include src="'header.html'"></div>
+
+
+<div class="container">
+
+    <h3>Add Contatos</h3>
+    <hr />
+
+   <div class="row">
+       <form class="form-horizontal">
+           
+           <!-- ID -->
+          <div class="form-group">
+		   <label for="id" class="col-sm-2 control-label">Código</label>
+              <div class="col-sm-2">
+                <input type="text" ng-model="contato.id" class="form-control" id="id" placeholder="Código">
+              </div>
+          </div>
+           
+           <!-- NAME -->
+           <div class="form-group">
+            <label class="col-md-2 control-label" for="nome">Nome</label>
+               
+            <div class="col-md-8">
+                <input type="text" ng-model="contato.nome" name="nome" class="form-control" id="nome" required="required" placeholder="Nome" />
+            </div>
+           </div>
+           
+           <!-- ENDEREÇO -->
+           <div class="form-group">
+               <label for="endereco" class="col-md-2 control-label">Endereço</label>
+                   <div class="col-md-4">
+                       <input type="text" ng-model="contato.rua" name="endereco" class="form-control" id="endereco" placeholder="Endereço, Nº" />
+                   </div>
+               <label for="bairro" class="col-md-1 control-label">Bairro</label>
+                   <div class="col-md-3">
+                       <input type="text" ng-model="contato.bairro" name="bairro" class="form-control" id="bairro" placeholder="Bairro" />
+                   </div>
+           </div>
+           
+           <!-- City -->
+           <div class="form-group">
+               <label for="cidade" class="col-md-2 control-label">Cidade</label>
+                <div class="col-md-4">
+                    <input type="text" ng-model="contato.cidade" name="cidade" class="form-control" id="cidade" placeholder="Cidade" />
+                </div>
+           </div>
+           
+           <!-- FONE -->
+           <div class="form-group">
+               <label for="fone" class="col-md-2 control-label">Fone</label>
+                   <div class="col-md-3">
+                       <input type="text" ng-model="contato.fone" name="fone" class="form-control" id="fone" placeholder="Fone" />
+                   </div>
+               <label for="email" class="col-md-1 control-label">Email</label>
+                   <div class="col-md-4">
+                       <input type="email" ng-model="contato.email" name="email" class="form-control" id="email" placeholder="Email" />
+                   </div>
+           </div>
+           
+           <!-- DESCRICAO -->
+           <div class="form-group">
+               <label for="descricao" class="col-md-2 control-label">Descricão</label>
+                <div class="col-md-8">
+                    <textarea name="descricao" ng-model="contato.descricao" rows="5" class="form-control" id="descrição" placeholder="mais informações">
+                    </textarea>
+                    <span class="help-block">Mais informações</span>
+                </div>
+           </div>
+           
+           <!-- BUTTONS -->
+           <div class="form-group">
+               <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <button ng-disabled="!contato.nome" type="submit" ng-click="salvar()" class="btn btn-success">Add</button>
+                    <a class="btn btn-danger" ng-click="limparCampos()">Cancel</a>
+				</div>
+           </div>
+           
+       </form>
+   </div>
+    
+    
+     <!-- TAble -->
+        <div class="table-responsive">
+			<table id="contatosListTable" class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>Fone</th>
+						<th>Email</th>
+						<th>Endereço</th>
+                        <th>Bairro</th>
+						<th>Ultima Data</th>
+						<th>Operation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="contatosListTable in contatos">
+					
+						<!-- <td><input hidden="hidden" name="id" th:value="${book.id}" /></td> -->
+						<td>{{contatosListTable.id}}</td>
+						<td>{{contatosListTable.nome}}</td>
+						<td>{{contatosListTable.fone}}</td>
+						<td>{{contatosListTable.email}}</td>
+						<td>{{contatosListTable.rua}}</td>
+                        <td>{{contatosListTable.bairro}}</td>
+						<td>{{contatosListTable.lastData}}</td>
+						<td>delete</td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div><!--/ TAble -->
+
+
+</div> <!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="controller/contatos.js"></script>
+
+</body>
+</html>

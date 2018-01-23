@@ -1,0 +1,44 @@
+package com.ND.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import com.ND.domain.Contatos;
+
+public class ContatosDaoImpl implements ContatosDao {
+
+	/*@PersistenceContext(unitName="NDAgendaContatosPersistenceUnit")
+	private EntityManager entityManager;
+	*/
+	
+	@Override
+	public Contatos salvaContatos(Contatos contatos) {
+		entityManager.persist(contatos);
+		return contatos;
+	}
+
+	@Override
+	public void alterar(Contatos contatos) {
+		Contatos contatosMerge = entityManager.merge(contatos);
+		entityManager.persist(contatosMerge);
+		
+	}
+
+	@Override
+	public void excluir(Contatos contatos) {
+		Contatos contatosMerge = entityManager.merge(contatos);
+		entityManager.remove(contatosMerge);
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Contatos> getContato() {
+		Query query = entityManager.createQuery("from Contatos");
+		return query.getResultList();
+	}
+
+}

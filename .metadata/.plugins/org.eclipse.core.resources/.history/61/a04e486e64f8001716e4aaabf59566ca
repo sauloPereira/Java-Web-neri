@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contatosModulo">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="" />
+<meta name="author" content="" />
+<!-- <link rel="icon" href="../../favicon.ico"> -->
+
+<title>Contatos Info</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="css/navbar-static-top.css" rel="stylesheet" />
+
+<!-- DATATABLE PLUG_IN -->
+<link href="css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<!-- FONT AWESOME PLUG IN -->
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="js/ie-emulation-modes-warning.js"></script>
+
+
+<script src="js/angular.min.js"></script>
+
+</head>
+
+<body ng-controller="contatosController">
+
+	<!-- Static navbar -->
+	<div ng-include src="'header.html'"></div>
+
+
+	<div class="container">
+
+		<h3>Informações de Contatos</h3>
+		<hr />
+
+
+		<div class="container">
+			<div>
+				<ol class="breadcrumb">
+					<li><a href="listaContatos.html"><i
+							class="fa fa-long-arrow-left" aria-hidden="true"></i>Go back</a></li>
+					<li><a href="@{/book/updateBook?id=}+${book.id}">Edit</a></li>
+				</ol>
+			</div>
+
+			<!-- <div class="row">
+				<div class="col-xs-3">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<img src="@{/image/book/}+${book.id}+'.png'"
+								class="img-responsive center-block" />
+						</div>
+					</div>
+				</div> -->
+
+				<div ng-repeat="contato in contatos track by contato.id" class="col-xs-9">
+					<h3 >{{contato.nome}}</h3>
+					<div class="row">
+						<div class="col-xs-6">
+							<p>
+								<strong>Nome: </strong><span >{{contato.nome}}</span>
+							</p>
+							<p>
+								<strong>Endereço: </strong><span >{{contato.rua}}</span>
+							</p>
+							<p>
+								<strong>Bairro: </strong><span >{{contato.bairro}}</span>
+							</p>
+							<p>
+								<strong>Cidade: </strong><span >{{contato.cidade}}</span>
+							</p>
+					
+						</div>
+
+						<div class="col-xs-6">
+							<p>
+								<strong>Fone: </strong><span >{{contato.fone}}</span>
+							</p>
+							<p>
+								<strong>Email: </strong><span >{{contato.email}}</span>
+							</p>
+							
+						</div>
+					</div>
+
+					<p>
+						<strong>Descrição: </strong><span >{{contato.descricao}}</span>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+		
+		<br />
+		<hr />
+		<br />
+
+
+		<!-- FOOTER -->
+		<br />
+		<hr />
+		<footer>
+			<p class="pull-right">
+				<a href="#">Back to top</a>
+			</p>
+			<p>
+				&copy; 2018 Saulo Pereira Company, Inc. &middot; <a href="#">Privacy</a>
+				&middot; <a href="#">Terms</a>
+			</p>
+		</footer>
+		<!-- /.FOOTER -->
+
+	</div>
+	<!-- /container -->
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="controller/contatos.js"></script>
+
+	<!-- DATA TABLES PLUG_IN -->
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/dataTables.bootstrap.min.js"></script>
+
+
+</body>
+</html>

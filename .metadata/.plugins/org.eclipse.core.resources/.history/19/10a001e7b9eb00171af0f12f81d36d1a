@@ -1,0 +1,13 @@
+package com.ND.dao;
+
+import com.ND.domain.Contatos;
+
+public interface ContatosDao {
+	
+	Contatos salvaContatos(Contatos contatos);
+	
+	void alterar(Contatos contatos);
+	
+	void excluir(Contatos contatos);
+
+}

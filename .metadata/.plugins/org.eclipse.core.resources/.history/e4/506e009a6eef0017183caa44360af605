@@ -1,0 +1,80 @@
+var contatosModulo = angular.module('contatosModulo', []);
+
+contatosModulo.controller('contatosController', function($scope, $http) {
+
+	urlContato = 'http://localhost:8080/NDAgendaContato/rest/contatos';
+
+	$scope.listarContatos = function() {
+
+		$http.get(urlContato).success(function(contatos) {
+			$Scope.contatos = contatos;
+		}).error(function(erro) {
+			alert(erro);
+		});
+
+	}
+
+	$scope.selecionaContato = function(contatoSelecionado) {
+			$scope.contato = contatoSelecionado;
+	}
+
+	$scope.limparCampos = function() {
+			$scope.contato = null;
+	}
+
+	$scope.salvar = function() {
+
+		if($scope.contato.id == undefined) {
+
+			$http.post(urlContato, $scope.contato).success(function(contato){
+
+				$scope.limparCampos();
+				$scope.listarContatos();
+
+			}).error(function(erro){
+				alert(erro);
+			});
+
+		}
+		else {
+
+			$scope.put(urlContato, $scope.contato).success(function(contato){
+
+				$scope.listarContatos();
+				$scope.limparCampos();
+
+			}).error(function(erro){
+				alert(erro);
+			});
+
+		}
+
+	}
+
+	$scope.excluir = function() {
+
+		if($scope.contato.id == undefined) {
+
+			alert("Favor selecionar campo.");
+			console.log("Favor selecionar campo.");
+
+		}
+		else {
+
+			$http.delete(urlContato + '/' + $scope.contato.id).success(function(){
+
+				$scope.listarContatos();
+				$scope.limparCampos();
+
+			}).error(function(erro){
+				alert(erro);
+			});
+
+		}
+
+	}
+
+
+	$scope.listarProfessores();
+
+});

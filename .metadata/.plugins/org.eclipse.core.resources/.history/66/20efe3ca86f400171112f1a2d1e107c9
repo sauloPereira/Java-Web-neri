@@ -1,0 +1,121 @@
+package com.bookstore.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class ShippingAddress {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String ShippingAddreessName;
+	private String ShippingAddreessStreet1;
+	private String ShippingAddreessStreet2;
+	private String ShippingAddreessCity;
+	private String ShippingAddreessState;
+	private String ShippingAddreessCountry;
+	private String ShippingAddreessZipcode;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getShippingAddreessName() {
+		return ShippingAddreessName;
+	}
+
+
+	public void setShippingAddreessName(String ShippingAddreessName) {
+		this.ShippingAddreessName = ShippingAddreessName;
+	}
+
+
+	public String getShippingAddreessStreet1() {
+		return ShippingAddreessStreet1;
+	}
+
+
+	public void setShippingAddreessStreet1(String ShippingAddreessStreet1) {
+		this.ShippingAddreessStreet1 = ShippingAddreessStreet1;
+	}
+
+
+	public String getShippingAddreessStreet2() {
+		return ShippingAddreessStreet2;
+	}
+
+
+	public void setShippingAddreessStreet2(String ShippingAddreessStreet2) {
+		this.ShippingAddreessStreet2 = ShippingAddreessStreet2;
+	}
+
+
+	public String getShippingAddreessCity() {
+		return ShippingAddreessCity;
+	}
+
+
+	public void setShippingAddreessCity(String ShippingAddreessCity) {
+		this.ShippingAddreessCity = ShippingAddreessCity;
+	}
+
+
+	public String getShippingAddreessState() {
+		return ShippingAddreessState;
+	}
+
+
+	public void setShippingAddreessState(String ShippingAddreessState) {
+		this.ShippingAddreessState = ShippingAddreessState;
+	}
+
+
+	public String getShippingAddreessCountry() {
+		return ShippingAddreessCountry;
+	}
+
+
+	public void setShippingAddreessCountry(String ShippingAddreessCountry) {
+		this.ShippingAddreessCountry = ShippingAddreessCountry;
+	}
+
+
+	public String getShippingAddreessZipcode() {
+		return ShippingAddreessZipcode;
+	}
+
+
+	public void setShippingAddreessZipcode(String ShippingAddreessZipcode) {
+		this.ShippingAddreessZipcode = ShippingAddreessZipcode;
+	}
+
+
+	public User getUser() {
+		return user;
+	}
+
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+	
+	
+}

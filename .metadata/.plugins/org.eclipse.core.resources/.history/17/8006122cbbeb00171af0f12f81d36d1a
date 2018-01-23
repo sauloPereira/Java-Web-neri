@@ -1,0 +1,33 @@
+package com.ND.dao;
+
+import java.util.List;
+
+import com.ND.domain.Contatos;
+
+public class ContatosDaoImpl implements ContatosDao {
+
+	@Override
+	public Contatos salvaContatos(Contatos contatos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void alterar(Contatos contatos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void excluir(Contatos contatos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Contatos> getContato() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout resource="/NDAgendaContato/WebContent/WEB-INF/beans.xml">
+ <TreeFormPage>
+  <Memento type="FileCDIBeans11">
+   <Memento type="Cdi Beans"/>
+  </Memento>
+  <Memento type="FileCDIBeans">
+   <Memento type="CDI Beans 1.0 File"/>
+  </Memento>
+ </TreeFormPage>
+</Layout>

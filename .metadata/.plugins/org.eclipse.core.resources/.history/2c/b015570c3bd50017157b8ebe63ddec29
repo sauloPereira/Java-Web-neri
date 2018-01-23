@@ -1,0 +1,5 @@
+package com.aulaneri.model.service;
+
+public interface ProfessorServiceInterface {
+
+}

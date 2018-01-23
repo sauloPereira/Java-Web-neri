@@ -1,0 +1,40 @@
+package com.ND.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import com.ND.domain.Contatos;
+
+public class ContatosDaoImpl implements ContatosDao {
+
+	@PersistenceContext(unitName="NDAgendaContatosPersistenceUnit")
+	private EntityManager entityManager;
+	
+	
+	@Override
+	public Contatos salvaContatos(Contatos contatos) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void alterar(Contatos contatos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void excluir(Contatos contatos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Contatos> getContato() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

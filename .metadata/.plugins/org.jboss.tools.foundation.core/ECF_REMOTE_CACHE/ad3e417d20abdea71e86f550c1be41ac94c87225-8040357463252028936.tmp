@@ -1,0 +1,7 @@
+### CI snapshot builds 4.5/11
+# 4.5.oxygen version of jbosstools-earlyaccess.properties should be edited here, so the discovery job can fetch it: http://download.jboss.org/jbosstools/oxygen/snapshots/updates/earlyaccess.properties/4.5.oxygen/jbosstools-earlyaccess.properties
+jboss.discovery.directory.url|jbosstools|4.5.2.AM2=http://download.jboss.org/jbosstools/oxygen/snapshots/updates/discovery.earlyaccess/master/jbosstools-directory.xml
+jboss.discovery.site.url|jbosstools|4.5.2.AM2=http://download.jboss.org/jbosstools/oxygen/snapshots/updates/discovery.central/master/
+jboss.discovery.earlyaccess.site.url|jbosstools|4.5.2.AM2=http://download.jboss.org/jbosstools/oxygen/snapshots/updates/discovery.earlyaccess/master/
+jboss.discovery.earlyaccess.list.url|jbosstools|4.5.2.AM2=http://download.jboss.org/jbosstools/oxygen/snapshots/updates/discovery.earlyaccess/master/jbosstools-earlyaccess.properties
+jboss.central.webpage.url|jbosstools|4.5.2.AM2=https://repository

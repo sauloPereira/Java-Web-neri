@@ -1,0 +1,5 @@
+package com.ND.service;
+
+public interface ContatosService {
+
+}
